@@ -10,7 +10,7 @@
     "test": "MODE=test jest --runInBand --verbose",
     "test:e2e": "cypress run",
     "lint": "eslint './**/*.{js,jsx}'",
-    "build:ui": "rm -rf build && cd frontend && npm run build --prod && mv -n build ..",
+    "build": "rm -rf build && cd frontend && npm run build --prod && mv -n build ..",
     "postinstall": "cd frontend; npm install; cd .."
   },
   "author": "Christian Hohenfeld",
