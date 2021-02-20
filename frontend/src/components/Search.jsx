@@ -5,7 +5,7 @@ const Search = ({ updateFunc }) => {
 
   return(
     <div>
-      <p>filter shown with <input onChange={ filterChange } /></p>
+      <p>filter shown with <input id="search" onChange={ filterChange } /></p>
     </div>
   )
 }
