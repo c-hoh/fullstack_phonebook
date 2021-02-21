@@ -20,7 +20,7 @@ const updateEntry = async (changeID, newData) => {
 
 const removeEntry = async (deleteID) => {
   const delURL = baseURL + "/" + deleteID
-  const response = await axios.delete(delURL, deleteID)
+  const response = await axios.delete(delURL)
   return response
 }
 
