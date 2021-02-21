@@ -13,6 +13,16 @@ const App = () => {
   const [ notificationMsg, setNotificationsMsg ] = useState(null)
   const [ msgStyle, setMsgStyle ] = useState(null)
 
+  const appStyle = {
+    margin: 'auto',
+    maxWidth: 1000,
+    fontFamily: 'sans-serif'
+  }
+
+  useEffect(() => {
+    document.title = "Fullstack Phonebook"
+  })
+
   useEffect(() => {
     phonebookService
       .getAll()
@@ -89,7 +99,7 @@ const App = () => {
       const personsNow = persons.filter(x => x.id !== id)
       setPersons(personsNow)
       displayMessage(`Removed ${ deleteEntry.name }`, 'msg')
-    }
+     }
   }
 
   const changeEntry = (oldData, newNumber) => {
@@ -116,7 +126,7 @@ const App = () => {
   }
 
   return (
-    <div>
+    <div style={ appStyle }>
       <h2>Phonebook</h2>
       <Search updateFunc={ setFilter } />
       <Notification msg={ notificationMsg } type={ msgStyle } />
