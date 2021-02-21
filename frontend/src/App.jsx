@@ -87,9 +87,8 @@ const App = () => {
     if (decision) {
       await phonebookService.removeEntry(id)
       const personsNow = persons.filter(x => x.id !== id)
-          setPersons(personsNow)
-          displayMessage(`Removed ${ deleteEntry.name }`, 'msg')
-        })
+      setPersons(personsNow)
+      displayMessage(`Removed ${ deleteEntry.name }`, 'msg')
     }
   }
 
