@@ -79,17 +79,14 @@ const App = () => {
     }
   }
 
-  const deleteEntry = (id) => {
+  const deleteEntry = async (id) => {
     const deleteEntry = persons.find(x => x.id === id)
     const deleteMsg = `Delete ${ deleteEntry.name }?`
     const decision = window.confirm(deleteMsg)
 
     if (decision) {
-      phonebookService
-        .removeEntry(id)
-        .then(deletedData => {
-          const justDeleted = deletedData.config[0]
-          const personsNow = persons.filter(x => x.id !== justDeleted)
+      await phonebookService.removeEntry(id)
+      const personsNow = persons.filter(x => x.id !== id)
           setPersons(personsNow)
           displayMessage(`Removed ${ deleteEntry.name }`, 'msg')
         })
